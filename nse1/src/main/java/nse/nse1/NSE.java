@@ -1,5 +1,6 @@
 package nse.nse1;
 
+import java.awt.Desktop.Action;
 import java.io.IOException;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -39,7 +40,6 @@ public class NSE extends Base{
 	
 	//utility methods created on seprate java class file
 	utility.takescreshot("nseshare");
-	
 	
 	}
 

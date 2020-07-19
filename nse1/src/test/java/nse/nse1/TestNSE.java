@@ -7,11 +7,12 @@ import Utilities.Base;
 
 public class TestNSE extends Base {
 	
+	NSE obj=new NSE(driver);
+
 	@Test
 	public void testNSE() throws InterruptedException, IOException {
-	NSE obj=new NSE(driver);
 	obj.NsePage();
-		
+	
 	}
 
 }
