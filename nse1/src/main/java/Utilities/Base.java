@@ -7,8 +7,10 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 public class Base {
 
@@ -25,14 +27,19 @@ public class Base {
 			e.printStackTrace();}
 		catch (IOException e) {
 			e.printStackTrace(); }
-	}
+	    }
 	
 	@BeforeTest
-	public void openBrowser() {
-		String browser = prop.getProperty("browser");
+	@Parameters
+	public void openBrowser(String browser) {
+		//String browser = prop.getProperty("browser");
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
 			driver = new ChromeDriver();
+		}
+		else if (browser.equalsIgnoreCase("firefox")){
+			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
+			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
 		driver.get(prop.getProperty("url"));

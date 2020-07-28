@@ -1,10 +1,9 @@
 package nse.nse1;
 
-import java.awt.Desktop.Action;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,7 +11,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Utilities.Base;
 import Utilities.utility;
 
@@ -41,6 +39,6 @@ public class NSE extends Base{
 	//utility methods created on seprate java class file
 	utility.takescreshot("nseshare");
 	
-	}
+}
 
 }
