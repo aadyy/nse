@@ -10,13 +10,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.DataProvider;
 
 public class Base {
 
 	public static WebDriver driver;
 	public static Properties prop;
-
+	public Object obj=new Object();
 	public Base() {
 		 
 		try {
@@ -30,9 +30,8 @@ public class Base {
 	    }
 	
 	@BeforeTest
-	@Parameters
-	public void openBrowser(String browser) {
-		//String browser = prop.getProperty("browser");
+	public void openBrowser() {
+		String browser = prop.getProperty("browser");
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
 			driver = new ChromeDriver();
@@ -46,6 +45,12 @@ public class Base {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	}
+	
+	@DataProvider(name = "testdata")
+	public Object[][] TEstdata() {
+
+		return null;
 	}
 	
 	@AfterTest
